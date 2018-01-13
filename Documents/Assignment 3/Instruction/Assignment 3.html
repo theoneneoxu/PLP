@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html class="scripts-not-loaded" lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 3</title>
+  <!--[if lte IE 9]> <meta http-equiv=refresh content="0; URL=/ie-9-is-not-supported.html" /> <![endif]-->
+  <link rel="shortcut icon" type="image/x-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" />
+  <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+  
+  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/edcacec43cb49c717d6b417c080b45b6/new_styles_normal_contrast/bundles/common-1850331329.css" />
+  <script>
+//<![CDATA[
+
+!function(){
+  var o,s,v;
+  if (!(window.Promise && Object.assign && [].find && [].includes && (o={},s=Symbol(),v={},o[s]=v,o[s]===v) && (function f(){}).bind().name==='bound f')) {
+    s = 's', document.write('<'+s+'cr'+'ipt src="https://du11hjcvx0uqb.cloudfront.net/dist/javascripts/vendor/ie11-polyfill-6afc9bbb51.js"></'+s+'c'+'ript>');
+  }
+}();
+      
+//]]>
+</script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/javascripts/vendor/lato-fontfaceobserver-b479c9e3e2.js" async="async"></script>
+  
+  <meta name="apple-itunes-app" content="app-id=480883488" />
+<link rel="manifest" href="/web-app-manifest/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#dd661e">
+  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/edcacec43cb49c717d6b417c080b45b6/new_styles_normal_contrast/bundles/assignments-51c94041f5.css" />
+<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/edcacec43cb49c717d6b417c080b45b6/new_styles_normal_contrast/bundles/tinymce-b1933becff.css" />
+<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/edcacec43cb49c717d6b417c080b45b6/new_styles_normal_contrast/bundles/learning_outcomes-43bb64f4db.css" />
+  
+  <link rel="stylesheet" media="all" href="https://instructure-uploads.s3.amazonaws.com/account_10160000000002010/attachments/31716183/override.css?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&amp;Expires=1960710138&amp;Signature=Cpvtnau0yfaj2fU2D0NWt7ADIWU%3D&amp;response-cache-control=Cache-Control%3Amax-age%3D473364000.0%2C%20public&amp;response-expires=473364000.0" />
+  <script>
+    // listen for any clicks on links that have href="#" and queue them to be fired on dom ready.
+      function _earlyClick(e){
+        var cur = e.target || e.srcElement;
+        while ( cur && cur.ownerDocument ) {
+          if ( cur.getAttribute('href') == '#' ) {
+            e.preventDefault();
+            _earlyClick.clicks = _earlyClick.clicks || [];
+            _earlyClick.clicks.push(cur);
+            break;
+          }
+          cur = cur.parentNode;
+        }
+      }
+      document.addEventListener('click', _earlyClick);
+  </script>
+</head>
+
+<body class="with-left-side course-menu-expanded with-right-side assignments primary-nav-expanded context-course_335277">
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <div class="ic-flash__icon" aria-hidden="true">
+      <i class="icon-warning"></i>
+    </div>
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+<ul id="flash_message_holder"></ul>
+<div id="flash_screenreader_holder"></div>
+
+<div id="application" class="ic-app">
+    <header id="header" class="ic-app-header no-print ">
+    <a href="#content" id="skip_navigation_link">Skip To Content</a>
+      <div role="region" class="ic-app-header__main-navigation" aria-label="Main Navigation">
+        <div class="ic-app-header__logomark-container">
+          <a href="https://ufl.instructure.com/" class="ic-app-header__logomark">
+            <span class="screenreader-only">Dashboard</span>
+          </a>
+        </div>
+        <ul id="menu" class="ic-app-header__menu-list">
+            <li class="menu-item ic-app-header__menu-list-item ">
+              <a id="global_nav_profile_link" href="/profile" class="ic-app-header__menu-list-link">
+                <div class="menu-item-icon-container" aria-hidden="true">
+                  <div class="ic-avatar ">
+                    <img src="https://ufl.instructure.com/images/thumbnails/29471456/adq1YOcZdQsWiHMUEdAdhpk0lza8k2ZLHsHShFdE" alt="Chang Xu" />
+                  </div>
+                </div>
+                <div class="menu-item__text">
+                  Account
+                </div>
+              </a>
+            </li>
+          <li class="ic-app-header__menu-list-item ">
+            <a id="global_nav_dashboard_link" href="https://ufl.instructure.com/" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--dashboard" version="1.1" x="0" y="0" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve"><path d="M231.6 94.2c-2.5-4.9-8.5-6.9-13.4-4.5l-57.3 28.6c-5.4-5.2-12.7-8.4-20.8-8.4 -16.6 0-30 13.5-30 30 0 16.6 13.5 30 30 30 16.6 0 30-13.5 30-30 0-1.3-0.1-2.5-0.2-3.8l57.3-28.6C232 105.2 234 99.2 231.6 94.2zM140 150c-5.5 0-10-4.5-10-10s4.5-10 10-10c5.5 0 10 4.5 10 10S145.6 150 140 150zM70 150H50c-5.5 0-10-4.5-10-10s4.5-10 10-10h20c5.5 0 10 4.5 10 10S75.5 150 70 150zM140 80c-5.5 0-10-4.5-10-10V50c0-5.5 4.5-10 10-10 5.5 0 10 4.5 10 10v20C150 75.5 145.5 80 140 80zM105 89.6c-3.5 0-6.8-1.8-8.7-5l-10-17.3c-2.8-4.8-1.1-10.9 3.7-13.7 4.8-2.8 10.9-1.1 13.7 3.7l10 17.3c2.8 4.8 1.1 10.9-3.7 13.7C108.4 89.1 106.7 89.6 105 89.6zM79.4 115.4c-1.7 0-3.4-0.4-5-1.3l-17.3-10c-4.8-2.8-6.4-8.9-3.7-13.7 2.8-4.8 8.9-6.4 13.7-3.7l17.3 10c4.8 2.8 6.4 8.9 3.7 13.7C86.2 113.6 82.8 115.4 79.4 115.4zM173.6 89.6c-1.7 0-3.4-0.4-5-1.3 -4.8-2.8-6.4-8.9-3.7-13.7l10-17.3c2.8-4.8 8.9-6.4 13.7-3.7 4.8 2.8 6.4 8.9 3.7 13.7l-10 17.3C180.4 87.8 177.1 89.6 173.6 89.6zM140 0C62.8 0 0 63 0 140.5V190c0 5.5 4.5 10 10 10h260c5.5 0 10-4.5 10-10v-49.5C280 63 217.2 0 140 0zM260 180H20v-39.5C20 74.1 73.8 20 140 20c66.2 0 120 54.1 120 120.5V180zM230 150h-20c-5.5 0-10-4.5-10-10s4.5-10 10-10h20c5.5 0 10 4.5 10 10S235.5 150 230 150z"/></svg>
+              </div>
+              <div class="menu-item__text">Dashboard</div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ic-app-header__menu-list-item--active">
+            <a id="global_nav_courses_link" href="/courses" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--courses" version="1.1" x="0" y="0" viewBox="0 0 280 259" enable-background="new 0 0 280 259" xml:space="preserve"><path d="M226.2 259H32.3c-5.9 0-10.8-4.8-10.8-10.8v-43.5H10.8C4.8 204.8 0 199.9 0 194c0-6 4.8-10.8 10.8-10.8h10.8v-21.6H10.8c-5.9 0-10.8-4.8-10.8-10.8s4.8-10.8 10.8-10.8h10.8v-21.6H10.8c-5.9 0-10.8-4.8-10.8-10.8 0-6 4.8-10.8 10.8-10.8h10.8V75.4H10.8C4.8 75.4 0 70.6 0 64.7s4.8-10.8 10.8-10.8h10.8V10.8c0-6 4.8-10.8 10.8-10.8h193.9c5.9 0 10.8 4.8 10.8 10.8v21.6h32.3c5.9 0 10.8 4.8 10.8 10.8v172.4c0 6-4.8 10.8-10.8 10.8H237v21.9C237 254.2 232.2 259 226.2 259zM43.1 237.4h172.4V21.6H43.1v32.3h10.7c5.9 0 10.8 4.8 10.8 10.8s-4.8 10.8-10.8 10.8H43.1V97h10.7c5.9 0 10.8 4.8 10.8 10.8 0 6-4.8 10.8-10.8 10.8H43.1v21.6h10.7c5.9 0 10.8 4.8 10.8 10.8s-4.8 10.8-10.8 10.8H43.1v21.6h10.7c5.9 0 10.8 4.8 10.8 10.8 0 6-4.8 10.8-10.8 10.8H43.1V237.4zM237 204.8h21.5v-21.6H237V204.8zM237 161.7h21.5v-21.6H237V161.7zM237 118.5h21.5V97H237V118.5zM237 75.4h21.5V53.9H237V75.4zM172.2 129.3H96.9c-5.9 0-10.8-4.8-10.8-10.8V64.7c0-6 4.8-10.8 10.8-10.8h75.3c5.9 0 10.8 4.8 10.8 10.8v53.9C183 124.5 178.2 129.3 172.2 129.3zM107.7 107.8h53.8V75.4h-53.8V107.8z"/></svg>
+              </div>
+              <div class="menu-item__text">
+                Courses
+              </div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ">
+            <a id="global_nav_calendar_link" href="/calendar" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--calendar" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M268.3 280H11.7C5.2 280 0 274.8 0 268.3V35c0-6.4 5.2-11.7 11.7-11.7h35V11.7C46.7 5.2 51.9 0 58.3 0h35C99.8 0 105 5.2 105 11.7v11.7h70V11.7C175 5.2 180.2 0 186.7 0h35c6.4 0 11.7 5.2 11.7 11.7v11.7h35c6.4 0 11.7 5.2 11.7 11.7v233.3C280 274.8 274.8 280 268.3 280zM23.3 256.7h233.3v-210h-23.3v11.7c0 6.4-5.2 11.7-11.7 11.7h-35c-6.4 0-11.7-5.2-11.7-11.7V46.7h-70v11.7c0 6.4-5.2 11.7-11.7 11.7h-35c-6.4 0-11.7-5.2-11.7-11.7V46.7H23.3V256.7zM198.3 46.7H210V23.3h-11.7V46.7zM70 46.7h11.7V23.3H70V46.7zM198.3 245c-6.4 0-11.7-5.2-11.7-11.7v-11.7h-35v11.7c0 6.4-5.2 11.7-11.7 11.7 -6.4 0-11.7-5.2-11.7-11.7v-11.7h-35v11.7c0 6.4-5.2 11.7-11.7 11.7S70 239.8 70 233.3v-11.7H46.7c-6.4 0-11.7-5.2-11.7-11.7s5.2-11.7 11.7-11.7H70V175H46.7c-6.4 0-11.7-5.2-11.7-11.7 0-6.4 5.2-11.7 11.7-11.7H70v-23.3H46.7c-6.4 0-11.7-5.2-11.7-11.7S40.2 105 46.7 105H70V93.3c0-6.4 5.2-11.7 11.7-11.7s11.7 5.2 11.7 11.7V105h35V93.3c0-6.4 5.2-11.7 11.7-11.7 6.4 0 11.7 5.2 11.7 11.7V105h35V93.3c0-6.4 5.2-11.7 11.7-11.7 6.4 0 11.7 5.2 11.7 11.7V105h23.3c6.4 0 11.7 5.2 11.7 11.7s-5.2 11.7-11.7 11.7H210v23.3h23.3c6.4 0 11.7 5.2 11.7 11.7 0 6.4-5.2 11.7-11.7 11.7H210v23.3h23.3c6.4 0 11.7 5.2 11.7 11.7s-5.2 11.7-11.7 11.7H210v11.7C210 239.8 204.8 245 198.3 245zM151.7 198.3h35V175h-35V198.3zM93.3 198.3h35V175h-35V198.3zM151.7 151.7h35v-23.3h-35V151.7zM93.3 151.7h35v-23.3h-35V151.7z"/></svg>
+              </div>
+              <div class="menu-item__text">
+                Calendar
+              </div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ">
+            <a id="global_nav_conversations_link" href="/conversations" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--inbox" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M93.3 105c0-6.4 5.2-11.7 11.7-11.7h70c6.4 0 11.7 5.2 11.7 11.7s-5.2 11.7-11.7 11.7h-70C98.6 116.7 93.3 111.4 93.3 105zM105 70h23.3c6.4 0 11.7-5.2 11.7-11.7s-5.2-11.7-11.7-11.7H105c-6.4 0-11.7 5.2-11.7 11.7S98.6 70 105 70zM280 198.3v70c0 6.4-5.2 11.7-11.7 11.7H11.7C5.2 280 0 274.8 0 268.3v-69.8c0-1.1 0.1-2.2 0.4-3.3 0.3-1.1 0.8-2.1 1.3-3L36.7 134c2.1-3.5 5.9-5.7 10-5.7h11.7V11.7C58.3 5.2 63.6 0 70 0h140c6.4 0 11.7 5.2 11.7 11.7v116.7h11.7c4.1 0 7.9 2.1 10 5.7l35 58.3c0.1 0.2 0.1 0.5 0.3 0.7 0.4 0.7 0.6 1.4 0.8 2.2 0.2 0.8 0.4 1.5 0.5 2.3C279.9 197.8 280 198.1 280 198.3zM32.3 186.7h67.9c6.4 0 11.7 5.2 11.7 11.7V210c0 7.8 3.5 7.8 6 7.8h48.7c5.7 0 10.5-3.6 10.5-7.8v-11.7c0-6.4 5.2-11.7 11.7-11.7h59l-21-35h-5.1v11.7c0 6.4-5.2 11.7-11.7 11.7s-11.7-5.2-11.7-11.7v-140H81.7v140c0 6.4-5.2 11.7-11.7 11.7s-11.7-5.2-11.7-11.7v-11.7h-5.1L32.3 186.7zM256.7 210h-56.3c0 17.2-15.2 31.1-33.8 31.1h-48.7c-17.6 0-29.4-12.5-29.4-31.1H23.3v46.7h233.3V210zM175 163.3c6.4 0 11.7-5.2 11.7-11.7 0-6.4-5.2-11.7-11.7-11.7h-70c-6.4 0-11.7 5.2-11.7 11.7 0 6.4 5.2 11.7 11.7 11.7H175z"/></svg>
+                <span class="menu-item__badge" style="display: none">0</span>
+              </div>
+              <div class="menu-item__text">
+                Inbox
+              </div>
+            </a>
+          </li>
+            
+
+          <li class="ic-app-header__menu-list-item">
+           <a id="global_nav_help_link" class="ic-app-header__menu-list-link" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">
+              <div class="menu-item-icon-container" role="presentation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg menu-item__icon svg-icon-help" version="1.1" x="0" y="0" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" fill="currentColor"><path d="M100 200C44.9 200 0 155.1 0 100 0 44.9 44.9 0 100 0s100 44.9 100 100C200 155.1 155.1 200 100 200zM100 20c-44.1 0-80 35.9-80 80s35.9 80 80 80 80-35.9 80-80S144.1 20 100 20z"/><path d="M110 130H90v-30h10c11 0 20-9 20-20 0-11-9-20-20-20s-20 9-20 20H60c0-22.1 17.9-40 40-40s40 17.9 40 40c0 18.6-12.8 34.3-30 38.7V130z"/><circle cx="100" cy="150" r="12.5"/></svg>
+
+              </div>
+              <div class="menu-item__text">
+                Help
+              </div>
+</a>          </li>
+        </ul>
+      </div>
+      <div role="region" aria-label="Secondary Navigation" class="ic-app-header__secondary-navigation">
+        <ul class="ic-app-header__menu-list">
+          <li class="menu-item ic-app-header__menu-list-item">
+            <span aria-live="polite">
+              <button
+                id="primaryNavToggle"
+                class="ic-app-header__menu-list-link ic-app-header__menu-list-link--nav-toggle"
+                aria-label="
+                  Minimize global navigation"
+                title="
+                  Minimize global navigation"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--navtoggle" version="1.1" x="0" y="0" width="40" height="32" viewBox="0 0 40 32" xml:space="preserve">
+  <polygon points="20.6 9.4 23.4 6.6 32.8 16 23.4 25.4 20.6 22.6 25.2 18 0 18 0 14 25.2 14 "/><rect x="36" width="4" height="32"/>
+</svg>
+
+              </button>
+            </span>
+          </li>
+        </ul>
+      </div>
+    <div id="global_nav_tray_container"></div>
+  </header>
+
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;" title="Error"></iframe>
+  </div>
+
+  
+
+  <div id="wrapper" class="ic-Layout-wrapper">
+      <div class="ic-app-nav-toggle-and-crumbs no-print">
+          <button type="button" id="courseMenuToggle" class="Button Button--link Button--small ic-app-course-nav-toggle" aria-live="polite" aria-label="Hide Courses Navigation Menu" title="Hide Courses Navigation Menu">
+            <i class="icon-hamburger" aria-hidden="true"></i>
+          </button>
+          <div class="ic-app-crumbs">
+        <nav id="breadcrumbs" role="navigation" aria-label="breadcrumbs"><ul><li class="home"><a href="/"><span class="ellipsible">      <i class="icon-home"
+         title="My Dashboard">
+        <span class="screenreader-only">My Dashboard</span>
+      </i>
+</span></a></li><li><a href="/courses/335277"><span class="ellipsible">COP5556</span></a></li><li><a href="/courses/335277/assignments"><span class="ellipsible">Assignments</span></a></li><li><a href="https://ufl.instructure.com/courses/335277/assignments/3191696"><span class="ellipsible">Assignment 3</span></a></li></ul></nav>
+        </div>
+      </div>
+    <div id="main" class="ic-Layout-columns">
+        <div id="left-side" class="ic-app-course-menu list-view">
+              <span id="section-tabs-header-subtitle" class="ellipsis">Spring 2017</span>
+            <nav role="navigation" aria-label="context"><ul id="section-tabs"><li class="section"><a href="/courses/335277" title="Home" class="home">Home</a></li><li class="section"><a href="/courses/335277/announcements" title="Announcements" class="announcements" aria-label="Course Announcements">Announcements</a></li><li class="section"><a href="/courses/335277/assignments" title="Assignments" class="assignments active" aria-label="Course Assignments">Assignments</a></li><li class="section"><a href="/courses/335277/discussion_topics" title="Discussions" class="discussions" aria-label="Course Discussions">Discussions</a></li><li class="section"><a href="/courses/335277/grades" title="Grades" class="grades" aria-label="Course Grades">Grades</a></li><li class="section"><a href="/courses/335277/users" title="People" class="people">People</a></li><li class="section"><a href="/courses/335277/wiki" title="Pages" class="pages">Pages</a></li><li class="section"><a href="/courses/335277/files" title="Files" class="files" aria-label="Course Files">Files</a></li><li class="section"><a href="/courses/335277/assignments/syllabus" title="Syllabus" class="syllabus">Syllabus</a></li><li class="section"><a href="/courses/335277/conferences" title="Conferences" class="conferences">Conferences</a></li><li class="section"><a href="/courses/335277/collaborations" title="Collaborations" class="collaborations">Collaborations</a></li><li class="section"><a href="/courses/335277/external_tools/16951" title="Chat" class="context_external_tool_16951">Chat</a></li><li class="section"><a href="/courses/335277/external_tools/28717" title="Course Video Lectures" class="context_external_tool_28717">Course Video Lectures</a></li><li class="section"><a href="/courses/335277/external_tools/31295" title="Office 365" class="context_external_tool_31295">Office 365</a></li></ul></nav>
+        </div>
+      <div id="not_right_side" class="ic-app-main-content">
+        <div id="content-wrapper" class="ic-Layout-contentWrapper">
+            
+          <div id="content" class="ic-Layout-contentMain" role="main">
+            
+
+
+<div id="assignment_show" class="assignment content_underline_links">
+    <!--Student View-->
+    <div class='assignment-title'>
+      <div class='title-content'>
+        <h1 class="title">
+          Assignment 3
+        </h1>
+      </div>
+      <div class='assignment-buttons'>
+        <span style="display: inline-block">
+          
+        </span>
+        <a class="btn btn-primary submit_assignment_link " href="#">Submit Assignment</a>
+      </div>
+    </div>
+    <ul class='student-assignment-overview'>
+      <li>
+        <span class='title'>Due</span>
+        <span class='value'>
+          <span class="date_text">
+                <span class="display_date">Monday</span> by 
+                <span class="display_time">11:59pm</span>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class='title'>Points</span>
+        <span class='value'>10</span>
+      </li>
+        <li>
+          <span class='title'>Submitting</span>
+          <span class='value'>a file upload</span>
+        </li>
+        <li>
+    <span class="title">Available</span>
+    <span class="value">
+        Feb 13 at 11:59pm - Apr 27 at 11:59pm
+        <span style="font-size: 0.8em;">2 months</span>
+    </span>
+  </li>
+
+      <div class="clear"></div>
+    </ul>
+
+  <div class="clear"></div>
+
+
+  <div class="clear"></div>
+
+  <div class="description user_content student-version"><p> </p>
+<p><a id="" class="" title="" href="https://docs.google.com/document/d/1IOkJ9_HdHhNEyJbPo4UYp9TD5Y_NFRsZEkynVlmOljk/edit?usp=sharing" target="">Assignment 3 description</a></p>
+<p><a id="" class=" instructure_file_link" title="hw3_ast.jar" href="/courses/335277/files/31559035/download?wrap=1" target="">hw3_ast.jar</a></p>
+<p> </p>
+<p>Cut and paste the following three methods into the Token class in your Scanner.java.  These are just the hashCode and equals methods generated by eclipse based on kind, pos, and length.  The equals method will be useful for grading purposes.  (And as you probably know,  you are supposed to override hashCode whenever you override equals in order to maintain the contract  "If two objects are equal according to the <code><span style="font-family: Courier New;">equals(Object)</span></code> method, then calling the <code><span style="font-family: Courier New;">hashCode</span></code> method on each of the two objects must produce the same integer result."</p>
+<p>  @Override<br>  public int hashCode() {<br>   final int prime = 31;<br>   int result = 1;<br>   result = prime * result + getOuterType().hashCode();<br>   result = prime * result + ((kind == null) ? 0 : kind.hashCode());<br>   result = prime * result + length;<br>   result = prime * result + pos;<br>   return result;<br>  }</p>
+<p>  @Override<br>  public boolean equals(Object obj) {<br>   if (this == obj) {<br>    return true;<br>   }<br>   if (obj == null) {<br>    return false;<br>   }<br>   if (!(obj instanceof Token)) {<br>    return false;<br>   }<br>   Token other = (Token) obj;<br>   if (!getOuterType().equals(other.getOuterType())) {<br>    return false;<br>   }<br>   if (kind != other.kind) {<br>    return false;<br>   }<br>   if (length != other.length) {<br>    return false;<br>   }<br>   if (pos != other.pos) {<br>    return false;<br>   }<br>   return true;<br>  }</p>
+<p> </p>
+<p>  private Scanner getOuterType() {<br>   return Scanner.this;<br>  }</p></div>
+
+
+  <div style="display: none;">
+    <span class="timestamp">1488257940</span>
+    <span class="due_date_string">02/27/2017</span>
+    <span class="due_time_string">11:59pm</span>
+  </div>
+</div>
+
+
+  <div style="display: none;" id="submit_assignment" data-context_code="course_335277" data-asset_string="assignment_3191696">
+  <div class="content" id="submit_assignment_tabs">
+    <ul>
+        <li><a href="#submit_online_upload_form" class="submit_online_upload_option">File Upload</a></li>
+        <li><a href="#submit_from_external_tool_form_31295"
+          class="external-tool"
+          data-id="31295"
+          data-name="Microsoft Office 365">Office 365</a></li>
+    </ul>
+    <form id="submit_online_upload_form" class="submit_assignment_form" enctype="multipart/form-data" action="/courses/335277/assignments/3191696/submissions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="sSHofVvVo2D+4yC3nYf3Al4Vc42y62pOv2nuiNgGsZbCcqkkI63BIZKOduek19hQDlontIqYKCLQPb7D4TXi+g==" />
+    <input value="online_upload" type="hidden" name="submission[submission_type]" id="submission_submission_type" />
+    <input value="" id="submission_attachment_ids" type="hidden" name="submission[attachment_ids]" />
+    <table class="formtable" style="width: 100%;">
+      <tr>
+        <td colspan="2">
+          Upload a file, or choose a file you&#39;ve already uploaded.
+            
+        </td>
+      </tr><tr>
+        <td><label id="attachmentLabel" for="attachment_uploaded_data">File:</label></td>
+        <td>
+          <a href="#" class="add_another_file_link">
+            <i class="icon-add" aria-hidden="true"></i>
+            Add Another File
+          </a>
+          <div id="submission_attachment_blank" class="submission_attachment" style="display: none;">
+            <input aria-labelledby="attachmentLabel" type="file" name="attachments[-1][uploaded_data]" class="input-file"/>
+            <a href="#" class="remove_attachment_link no-hover" style="display: none;"><i class="icon-end" aria-hidden="true"></i><span class="screenreader-only">remove empty attachment</span></a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="font-size: 0.8em;">
+        <a href="#" class="toggle_uploaded_files_link">Click here to find a file you&#39;ve already uploaded</a><br/>
+        <div id="uploaded_files" style="display: none;">
+          
+          <ul>
+    <li class="folder  folder folder_2993435">
+      <span class="id" style="display: none;">2993435</span>
+      <span class="text name">my files</span>
+        <ul>
+    <li class="folder  folder folder_3299389">
+      <span class="id" style="display: none;">3299389</span>
+      <span class="text name">conversation attachments</span>
+        <ul>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_3068234">
+      <span class="id" style="display: none;">3068234</span>
+      <span class="text name">Submissions</span>
+        <ul>
+    <li class="folder  folder folder_3283075">
+      <span class="id" style="display: none;">3283075</span>
+      <span class="text name">COP5556: Programming Lang Princ, Spring 2017</span>
+        <ul>
+    <li class="file  file file_31482961">
+      <span class="id" style="display: none;">31482961</span>
+      <span class="text name">Chang_Xu_94101882_hw1.jar</span>
+    </li>
+    <li class="file  file file_31673251">
+      <span class="id" style="display: none;">31673251</span>
+      <span class="text name">Chang_Xu_94101882_hw2.jar</span>
+    </li>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_3068235">
+      <span class="id" style="display: none;">3068235</span>
+      <span class="text name">COP5615: Distributed Operating Systems Principles, Fall 2016</span>
+        <ul>
+    <li class="file  zip file_29713214">
+      <span class="id" style="display: none;">29713214</span>
+      <span class="text name">Lab 1.zip</span>
+    </li>
+    <li class="file  zip file_29867314">
+      <span class="id" style="display: none;">29867314</span>
+      <span class="text name">Lab 2.zip</span>
+    </li>
+    <li class="file  zip file_30193221">
+      <span class="id" style="display: none;">30193221</span>
+      <span class="text name">Lab 3.zip</span>
+    </li>
+    <li class="file  zip file_30193244">
+      <span class="id" style="display: none;">30193244</span>
+      <span class="text name">Lab 3 Extra.zip</span>
+    </li>
+    <li class="file  zip file_30193279">
+      <span class="id" style="display: none;">30193279</span>
+      <span class="text name">Lab 3 Original and Extra.zip</span>
+    </li>
+    <li class="file  zip file_30656009">
+      <span class="id" style="display: none;">30656009</span>
+      <span class="text name">Project of Group 9.zip</span>
+    </li>
+    <li class="file  zip file_30656191">
+      <span class="id" style="display: none;">30656191</span>
+      <span class="text name">Project of Group 9-1.zip</span>
+    </li>
+    <li class="file  zip file_30656212">
+      <span class="id" style="display: none;">30656212</span>
+      <span class="text name">Project of Group 9-2.zip</span>
+    </li>
+    <li class="file  doc file_30656214">
+      <span class="id" style="display: none;">30656214</span>
+      <span class="text name">Project Report of Group 9.docx</span>
+    </li>
+    <li class="file  zip file_30656246">
+      <span class="id" style="display: none;">30656246</span>
+      <span class="text name">Project Files_Group 9.zip</span>
+    </li>
+    <li class="file  doc file_30656248">
+      <span class="id" style="display: none;">30656248</span>
+      <span class="text name">Project Report_Group 9.docx</span>
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_2993436">
+      <span class="id" style="display: none;">2993436</span>
+      <span class="text name">profile pictures</span>
+        <ul>
+    <li class="file  image file_29471456">
+      <span class="id" style="display: none;">29471456</span>
+      <span class="text name">profile.jpg</span>
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea class="submission_comment_textarea" placeholder="Comments..." title="Additional comments" name="submission[comment]" id="submission_comment">
+</textarea>
+        </td>
+      </tr>
+      
+      <tr>
+        <td colspan="2" class='button-container'>
+          <button type="button" class='cancel_button btn'>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit_file_button">Submit Assignment</button>
+        </td>
+      </tr><tr style="display: none;">
+        <td colspan="2" style="text-align: center;">
+          Submitting... <img src=""/>
+        </td>
+      </tr>
+    </table>
+</form>
+
+
+    <style>
+    #google_docs_tree li.folder {
+      cursor: pointer;
+    }
+    #google_docs_tree li.file {
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      width: 80%;
+      padding-right: 20px;
+    }
+    #google_docs_tree li.file:hover {
+      background-color: #eee;
+    }
+    ul.instTree li span.active {
+      background: none;
+    }
+    #google_docs_tree li.file.leaf.active {
+      background-color: #ddd;
+    }
+    #google_docs_tree li.file .filename {
+      float: left;
+      max-width: 98%;
+    }
+    #google_docs_tree li.file .popout {
+      float: right;
+    }
+    </style>
+
+
+      <div id="submit_from_external_tool_form_31295" style="padding: 5px 5px 0 5px;"></div>
+
+  </div>
+</div>
+
+
+
+
+<div id="rubrics" style="margin-bottom: 10px;">
+  <div style="display: none;" id="rubric_parameters">
+    <input type="hidden" name="rubric_association[association_type]" value="Assignment"/>
+    <input type="hidden" name="rubric_association[association_id]" value="3191696"/>
+    <input type="hidden" name="rubric_association[purpose]" value="grading"/>
+  </div>
+  <div id="rubric_long_description_dialog" style="display: none;">
+  <div class="description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">
+  </div>
+  <div class="editing">
+    <textarea class="long_description" aria-label="Long Description" name="long_description" style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+      <button type="button" class="btn save_button">Update Description</button>
+    </div>
+  </div>
+  <div class="displaying">
+    <div class="long_description">
+    </div>
+  </div>
+</div>
+<div id="rubric_criterion_comments_dialog" style="display: none;">
+  <div
+    class="criterion_description"
+    style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;"
+    tabindex="-1"
+  ></div>
+  <div class="editing">
+    <label for="criterion_comments_textarea">
+      Additional Comments:
+    </label>
+    <textarea
+      id="criterion_comments_textarea"
+      class="criterion_comments"
+      name="criterion_comments"
+      style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+      <button type="button" class="btn save_button">Update Comments</button>
+    </div>
+  </div>
+  <div class="displaying">
+    Additional Comments:
+    <div class="criterion_comments" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+
+</div>
+<div
+  class="rubric_container rubric  "
+  id="default_rubric"
+  style="display: none;"
+  tabindex="0"
+>
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="float: right; display: none;" class="links displaying">
+      <a
+        href="/courses/335277/rubrics/%7B%7B%20id%20%7D%7D"
+        class=" edit_rubric_link no-print no-hover"
+        style=""
+        title="Edit Rubric"
+        aria-label="Edit Rubric"
+        role="button"
+      ><i class="icon-edit standalone-icon"></i></a>
+      <a
+        href="https://ufl.instructure.com/search/rubrics?q="
+        class="find_rubric_link no-print no-hover"
+        style=""
+        title="Find Another Rubric"
+        aria-label="Find Another Rubric"
+        role="button"
+      ><i class="icon-search standalone-icon"></i></a>
+        <a
+          href="/courses/335277/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D"
+          class="delete_rubric_link no-print no-hover"
+          style=""
+          title="Delete Rubric"
+          aria-label="Delete Rubric"
+          role="button"
+        ><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">&nbsp;</div>
+        <div class="free_form_criterion_comments">&nbsp;</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="rubric_association_id">&nbsp;</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="/courses/335277/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="/courses/335277/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="/courses/335277/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can&#39;t change a rubric once you&#39;ve started using it.</span>
+        <a href="/courses/335277/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://ufl.instructure.com/search/rubrics?q=" class="find_rubric_link icon-search" style="" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="Some Rubric" style="width: 200px;" maxlength="255" aria-label="Title:"/>
+      <a href="https://ufl.instructure.com/search/rubrics?q=" style="display: none;"><img alt="" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/find-6164443e2a.png" /> Find Rubric</a>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">Title</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You&#39;ve already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">Title</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th scope="col">Criteria</th>
+    <th scope="col">Ratings</th>
+    <th scope="col">Pts</th>
+    <th scope="col" class="editing">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <i class="learning_outcome_flag icon-outcomes" aria-hidden="true"></i>
+      <span class="screenreader-only">This criterion is linked to a Learning Outcome</span>
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+        <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tr>
+          <td id="rating_blank" class="rating edge_rating">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr">
+              <span class="points">5</span> pts
+            </span>
+            <span class="rating_id" style="display: none;">blank</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr">
+              <span class="points">0</span> pts
+            </span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+              <div class="links">
+                <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                <a href="#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+                <!-- Hidden if last -->
+                <a href="#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+              </div>
+          </div>
+          </td>
+      </tr></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          
+            <input
+              type="text"
+              aria-label="Points"
+              value="5"
+              class="criterion_points span1 no-margin-bottom"
+            />
+           pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/rubric_comment-ddae8546ab.png" />
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a
+      href="#"
+      class="delete_criterion_link"
+      title="Delete Criterion Row"
+      role="button"
+      aria-label="Delete Criterion Row"
+    ><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+  <tr class="summary" style="">
+    <td colspan="4">
+      <div style="float: right;" class="total_points_holder">
+        <span style="padding-right: 10px;">Total Points:
+            <span class="rubric_total">
+              5
+            </span>
+ <span class="assessing">out of 5</span>        </span>
+      </div>
+      <div style="float: left;" class="editing">
+      <a href="#" aria-label='Add Criterion' class="icon-plus add_criterion_link">Criterion</a>
+      &nbsp;&nbsp;<a href="#" class="icon-search find_outcome_link outcome">Find Outcome</a>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating" />
+          <label for="rubric_custom_rating">I&#39;ll write free-form comments when assessing students</label>
+        </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox" />
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox" />
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="ic-Action-header ic-Action-header--half-margin">
+          <div class="ic-Action-header__Primary">
+            <button type="button" class="Button cancel_button">Cancel</button>
+            <button type="submit" class="Button Button--primary save_button">Create Rubric</button>
+          </div>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+
+
+          </div>
+        </div>
+        <div id="right-side-wrapper" class="ic-app-main-content__secondary">
+          <aside id="right-side" role="complementary">
+            <div id="sidebar_content">
+
+
+</div>
+
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">83511a33-84a5-4e6f-a685-18a531ad2181</div>
+    </div>
+    <div id="cant_record_dialog" style="display: none;">
+  <div>
+    In order to create video or audio recordings your computer needs to be 
+    webcam-enabled.  If you don&#39;t have a webcam on your computer, you can still
+    record audio-only messages by first installing the Google Video Chat
+    plugin.
+  </div>
+  <div style="text-align: center; font-size: 1.5em; margin: 10px;">
+    <a href="http://www.google.com/chat/video" target="_blank" class="btn">Install the Video Plugin</a>
+  </div>
+  <div class="links" style="text-align: right; font-size: 0.8em; display: none;">
+    <a href="#" class="cant_record_link">Don&#39;t have a webcam?</a>
+  </div>
+</div>
+  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
+  <div id='StudentContextTray__Container'></div>
+  <script>
+  INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"fms-prod.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"googleAnalyticsAccount":"UA-9138420-1","disableGooglePreviews":true,"disableScribdPreviews":true,"logPageViews":true,"maxVisibleEditorButtons":3,"editorButtons":[{"name":"New York Times","id":13439,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=nytimes","icon_url":"https:\/\/www.edu-apps.org\/tools\/nytimes\/icon.png","canvas_icon_class":null,"width":690,"height":530},{"name":"Public Resources","id":17316,"url":"https:\/\/www.edu-apps.org\/lti_public_resources","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/public_resources_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"YouTube","id":18259,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=youtube","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/youtube_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"Office Mix","id":23236,"url":"https:\/\/mix.office.com\/lti\/Ext\/EmbedContent","icon_url":"https:\/\/mix.office.com\/content\/images\/lti\/MixIcon16.png","canvas_icon_class":null,"width":800,"height":600},{"name":"Upload\/Embed Image","id":25205,"url":"https:\/\/multitool.ciditools.com\/cropped\/controller.php","icon_url":"https:\/\/multitool.ciditools.com\/cropped\/croppedIcon.png","canvas_icon_class":null,"width":750,"height":600},{"name":"TEDEd","id":29246,"url":"https:\/\/www.edu-apps.org\/lti_public_resources\/?tool_id=youtube_ted_ed","icon_url":"https:\/\/www.edu-apps.org\/assets\/lti_public_resources\/ted_ed_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"Microsoft Office 365","id":31295,"url":"https:\/\/office365-iad-prod.instructure.com\/lti\/rce-content-item","icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png","canvas_icon_class":null,"width":900,"height":600}]};
+  ENV = {"ASSET_HOST":"https:\/\/du11hjcvx0uqb.cloudfront.net","active_brand_config":"edcacec43cb49c717d6b417c080b45b6","active_brand_config_json_url":"https:\/\/du11hjcvx0uqb.cloudfront.net\/dist\/brandable_css\/edcacec43cb49c717d6b417c080b45b6\/variables-8cf919bc8524fb9c9655c94ea1375cc7.json","url_to_what_gets_loaded_inside_the_tinymce_editor_css":"https:\/\/du11hjcvx0uqb.cloudfront.net\/dist\/brandable_css\/edcacec43cb49c717d6b417c080b45b6\/new_styles_normal_contrast\/bundles\/what_gets_loaded_inside_the_tinymce_editor-da765ef8c0.css","current_user_id":"953265","current_user":{"id":"953265","display_name":"Chang Xu","avatar_image_url":"https:\/\/ufl.instructure.com\/images\/thumbnails\/29471456\/adq1YOcZdQsWiHMUEdAdhpk0lza8k2ZLHsHShFdE","html_url":"https:\/\/ufl.instructure.com\/about\/953265"},"current_user_roles":["user","student"],"current_user_disabled_inbox":false,"files_domain":"cluster30-files.instructure.com","DOMAIN_ROOT_ACCOUNT_ID":10160000000002010,"k12":false,"help_link_name":"Help","help_link_icon":"help","use_high_contrast":false,"SETTINGS":{"open_registration":false,"eportfolios_enabled":true,"collapse_global_nav":false,"show_feedback_link":true,"enable_profiles":true},"page_view_update_url":"\/page_views\/83511a33-84a5-4e6f-a685-18a531ad2181?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiODM1MTFhMzMtODRhNS00ZTZmLWE2ODUtMThhNTMxYWQyMTgxIiwidSI6MTAxNjAwMDAwMDA5NTMyNjUsImMiOiIyMDE3LTAyLTI1VDIyOjU5OjQ3LjQ3WiJ9.IAZ27DOIt32fXZb33OInEg41mSdY5meRRzW00UkkQCQ","context_asset_string":"course_335277","ping_url":"https:\/\/ufl.instructure.com\/api\/v1\/courses\/335277\/ping","TIMEZONE":"America\/New_York","CONTEXT_TIMEZONE":"America\/New_York","LOCALE":"en","BIGEASY_LOCALE":"en_US","FULLCALENDAR_LOCALE":"en","MOMENT_LOCALE":"en","RICH_CONTENT_SERVICE_ENABLED":false,"ROOT_OUTCOME_GROUP":{"id":"277412","title":"COP5556: Programming Lang Princ, Spring 2017","vendor_guid":null,"url":"\/api\/v1\/courses\/335277\/outcome_groups\/277412","subgroups_url":"\/api\/v1\/courses\/335277\/outcome_groups\/277412\/subgroups","outcomes_url":"\/api\/v1\/courses\/335277\/outcome_groups\/277412\/outcomes","can_edit":false,"import_url":"\/api\/v1\/courses\/335277\/outcome_groups\/277412\/import","context_id":"335277","context_type":"Course","description":null},"COURSE_ID":335277,"ASSIGNMENT_ID":3191696,"EXTERNAL_TOOLS":[{"id":"31295","domain":"office365-iad-prod.instructure.com","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/course-navigation","consumer_key":"4f1d5910-1aea-4c5d-bd75-3d3fe1aef4f3","name":"Microsoft Office 365","description":"Allows you to pull in documents from Office 365 to Canvas","created_at":"2017-02-17T15:29:00Z","updated_at":"2017-02-17T15:29:00Z","privacy_level":"name_only","custom_fields":{"account_id":"$Canvas.account.id","assignment_title":"$Canvas.assignment.title","base_url":"$Canvas.api.baseUrl","collaboration_members_url":"$Canvas.api.collaborationMembers.url","course_id":"$Canvas.course.id","domain":"$Canvas.api.domain","group_context_ids":"$Canvas.group.contextIds","masquerading_user_id":"$Canvas.masqueradingUser.userId","membership_service_url":"$ToolProxyBinding.memberships.url","time_zone":"$Person.address.timezone","user_id":"$Canvas.user.id"},"workflow_state":"name_only","vendor_help_link":null,"account_navigation":null,"similarity_detection":null,"assignment_menu":null,"assignment_selection":{"message_type":"ContentItemSelectionRequest","text":"Office 365 Cloud Assignment","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/cloud-assignment-template","label":"Office 365 Cloud Assignment","selection_width":800,"selection_height":400,"icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png"},"collaboration":{"canvas_icon_class":"icon-lti","icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png","message_type":"ContentItemSelectionRequest","text":"Office 365","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/collaboration-content-item","label":"Office 365","selection_width":800,"selection_height":400},"course_assignments_menu":null,"course_home_sub_navigation":null,"course_navigation":{"text":"Office 365","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/course-navigation","label":"Office 365","selection_width":800,"selection_height":400,"icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png"},"course_settings_sub_navigation":null,"discussion_topic_menu":null,"editor_button":{"icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png","message_type":"ContentItemSelectionRequest","selection_height":600,"selection_width":900,"url":"https:\/\/office365-iad-prod.instructure.com\/lti\/rce-content-item","label":"Microsoft Office 365"},"file_menu":null,"global_navigation":null,"homework_submission":{"canvas_icon_class":"icon-lti","icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png","message_type":"ContentItemSelectionRequest","text":"Office 365","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/homework-submission-content-item","label":"Office 365","selection_width":800,"selection_height":400},"link_selection":{"enabled":"true","message_type":"ContentItemSelectionRequest","selection_height":600,"selection_width":900,"text":"Office 365","url":"https:\/\/office365-iad-prod.instructure.com\/lti\/module-content-item","label":"Office 365","icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png"},"migration_selection":null,"module_menu":null,"post_grades":null,"quiz_menu":null,"resource_selection":null,"tool_configuration":null,"user_navigation":null,"wiki_page_menu":null,"icon_url":"https:\/\/office365-iad-prod.instructure.com\/images\/office365_icon.png","not_selectable":false}],"SUBMIT_ASSIGNMENT":{"ALLOWED_EXTENSIONS":[],"ID":3191696},"badge_counts":{"submissions":0},"notices":[]};
+
+    // TODO: move this out when we have a single require call
+    require = {
+      translate: true,
+      baseUrl: '/optimized',
+      paths: {
+    "ember":"bower\/ember\/ember",
+    "common":"compiled\/bundles\/common",
+    "jqueryui":"vendor\/jqueryui",
+    "handlebars":"symlink_to_node_modules\/handlebars\/dist\/handlebars.runtime",
+    "..\/..\/node_modules\/axios":"symlink_to_node_modules\/axios\/dist\/axios",
+    "node_modules-version-of-backbone":"symlink_to_node_modules\/backbone\/backbone",
+    "node_modules-version-of-react-modal":"symlink_to_node_modules\/react-modal\/dist\/react-modal",
+    "moment":"moment_requireJS",
+    "react-addons-css-transition-group":"react-addons-css-transition-group_requireJS",
+    "react-addons-pure-render-mixin":"react-addons-pure-render-mixin_requireJS",
+    "react-addons-test-utils":"react-addons-test-utils_requireJS",
+    "react-addons-update":"react-addons-update_requireJS",
+    "enzyme":"enzyme_requireJS",
+    "instructureicons":"instructure-icons\/",
+    "parse-decimal-number":"parse-decimal-number_requireJS",
+    "compiled\/tinymce":"compiled\/tinymce.js?v2",
+    "demo_site":"plugins\/demo_site",
+    "migration_tool":"plugins\/migration_tool",
+    "catalog_provisioner":"plugins\/catalog_provisioner",
+    "instructure_misc_plugin":"plugins\/instructure_misc_plugin",
+    "analytics":"plugins\/analytics",
+    "multiple_root_accounts":"plugins\/multiple_root_accounts",
+    "canvasnet_registration":"plugins\/canvasnet_registration",
+    "compiled\/bundles\/modules\/content_migration_setup_without_extensions":"compiled\/bundles\/modules\/content_migration_setup",
+    "compiled\/bundles\/modules\/content_migration_setup":"compiled\/bundles\/modules\/content_migration_setup_with_extensions",
+    "compiled\/registration\/main_without_extensions":"compiled\/registration\/main",
+    "compiled\/registration\/main":"compiled\/registration\/main_with_extensions",
+    "compiled\/registration\/signupDialog_without_extensions":"compiled\/registration\/signupDialog",
+    "compiled\/registration\/signupDialog":"compiled\/registration\/signupDialog_with_extensions",
+    "compiled\/bundles\/modules\/account_quota_settings_without_extensions":"compiled\/bundles\/modules\/account_quota_settings",
+    "compiled\/bundles\/modules\/account_quota_settings":"compiled\/bundles\/modules\/account_quota_settings_with_extensions",
+    "canvas_quizzes":"client_apps\/canvas_quizzes",
+    "app\/config\/environments\/production":"empty:"},
+      packages : [{"name":"ember-qunit","location":"bower\/ember-qunit\/dist\/amd"},{"name":"classnames","location":"symlink_to_node_modules\/classnames","main":"index"},{"name":"color-slicer","location":"symlink_to_node_modules\/color-slicer","main":"dist\/color-slicer"},{"name":"d3","location":"symlink_to_node_modules\/d3","main":"d3"},{"name":"fullcalendar","location":"symlink_to_node_modules\/fullcalendar","main":"dist\/fullcalendar"},{"name":"ic-ajax","location":"symlink_to_node_modules\/ic-ajax\/dist\/amd"},{"name":"ic-tabs","location":"symlink_to_node_modules\/ic-tabs"},{"name":"instructure-ui","location":"symlink_to_node_modules\/instructure-ui\/dist","main":"instructure-ui"},{"name":"instructure-icons","location":"symlink_to_node_modules\/instructure-icons","main":"react\/index"},{"name":"lodash","location":"symlink_to_node_modules\/lodash","main":"lodash"},{"name":"moxios","location":"symlink_to_node_modules\/moxios","main":"dist\/moxios"},{"name":"page","location":"symlink_to_node_modules\/page","main":"page"},{"name":"qs","location":"symlink_to_node_modules\/qs","main":"dist\/qs"},{"name":"react","location":"symlink_to_node_modules\/react","main":"dist\/react-with-addons"},{"name":"react-crop","location":"symlink_to_node_modules\/react-crop","main":"dist\/react-crop.min"},{"name":"react-dom","location":"symlink_to_node_modules\/react-dom","main":"dist\/react-dom"},{"name":"react-dnd","location":"symlink_to_node_modules\/react-dnd","main":"dist\/ReactDnD.min"},{"name":"react-dnd-html5-backend","location":"symlink_to_node_modules\/react-dnd-html5-backend","main":"dist\/ReactDnDHTML5Backend.min"},{"name":"react-redux","location":"symlink_to_node_modules\/react-redux","main":"dist\/react-redux.min"},{"name":"react-select-box","location":"symlink_to_node_modules\/react-select-box","main":"dist\/react-select-box"},{"name":"react-tokeninput","location":"symlink_to_node_modules\/react-tokeninput","main":"dist\/react-tokeninput"},{"name":"react-tabs","location":"symlink_to_node_modules\/react-tabs","main":"dist\/react-tabs"},{"name":"react-tray","location":"symlink_to_node_modules\/react-tray","main":"dist\/react-tray"},{"name":"redux","location":"symlink_to_node_modules\/redux","main":"dist\/redux"},{"name":"redux-actions","location":"symlink_to_node_modules\/redux-actions","main":"dist\/redux-actions.min"},{"name":"redux-logger","location":"symlink_to_node_modules\/redux-logger","main":"dist\/index"},{"name":"redux-thunk","location":"symlink_to_node_modules\/redux-thunk","main":"dist\/redux-thunk"},{"name":"tinymce","location":"symlink_to_node_modules\/tinymce","main":"tinymce"},{"name":"spin.js","location":"symlink_to_node_modules\/spin.js","main":"spin"}],
+      shim: {
+    'ember': {
+      deps: ['jquery', 'handlebars'],
+      exports: 'Ember'
+    },
+    'vendor/FileAPI/FileAPI.min': {
+      deps: ['jquery', 'vendor/FileAPI/config'],
+      exports: 'FileAPI'
+    },
+    'fullcalendar/dist/lang-all': {
+      deps: ['fullcalendar']
+    },
+    'vendor/bootstrap-select/bootstrap-select' : { deps: ['jquery'] },
+    'vendor/jquery.jcrop': { deps: ['jquery'] },
+    'vendor/md5': {
+      exports: 'CryptoJS'
+    },
+    'vendor/i18n': {
+      exports: 'I18n'
+    },
+
+    'handlebars': {
+      exports: 'Handlebars'
+    },
+
+    'tinymce/tinymce' : { exports: 'tinymce'},
+    'tinymce/plugins/autolink/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/media/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/paste/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/table/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/textcolor/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/link/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/directionality/plugin' : { deps: ['tinymce'] },
+    'tinymce/plugins/lists/plugin' : { deps: ['tinymce'] },
+    'tinymce/themes/modern/theme' : { deps: ['tinymce'] },
+  }
+,
+      map: {"canvas_quizzes":{"lodash":"underscore","node_modules-version-of-backbone":"symlink_to_node_modules\/backbone\/backbone","backbone":"Backbone","jquery\/instructure_date_and_time":"jquery.instructure_date_and_time"},"*":{"spin":"spin.js\/spin"}},
+      waitSeconds: 60
+    };
+</script>
+
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/vendor/require-749d0c60e9.js"></script>
+
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/common-9e1a5d4b84.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/assignment_show-5c8abe8053.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/submit_assignment-0ca2b4bc1f.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/edit_rubric-40c0b06498.js"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/optimized/compiled/bundles/navigation_header-365a4b4d1b.js"></script>
+<script>
+//<![CDATA[
+          require(['jquery'], function () {
+            ["https:\/\/instructure-uploads.s3.amazonaws.com\/account_10160000000002010\/attachments\/29875561\/override.js?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA\u0026Expires=1948872827\u0026Signature=i%2B0kWmByQcfNX9hqjGtq1%2BGAumA%3D\u0026response-cache-control=Cache-Control%3Amax-age%3D473364000.0%2C%20public\u0026response-expires=473364000.0","https:\/\/instructure-uploads.s3.amazonaws.com\/account_10160000000002010\/attachments\/28428070\/eng.js?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA\u0026Expires=1935650373\u0026Signature=oAJgl2qlmB3bFFKfIqrpUlaNtuk%3D\u0026response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public\u0026response-expires=473364000","https:\/\/instructure-uploads.s3.amazonaws.com\/account_10160000000002010\/attachments\/28428078\/comp_info_sci_eng.js?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA\u0026Expires=1935650609\u0026Signature=bYTNGU7J%2ByKDbR39muYWQh0YbZk%3D\u0026response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public\u0026response-expires=473364000"].forEach(function (src) {
+              var s = document.createElement('script');
+              s.src = src;
+              document.body.appendChild(s);
+            });
+          });
+
+//]]>
+</script>
+
+
+
+  <script>
+  // Determines if the scripts are loaded.
+  // When we get everything out of the views, and have a single top-level
+  // `require`, this becomes meaningless and will be abandoned.
+  (function() {
+    var attempts = 0;
+    var timeout = 10;
+    var check = function() {
+      attempts++;
+      var done = !window.requirejs.s.contexts._.defQueue.length
+      var giveup = attempts === 100; // 1 second
+      if (done || giveup) {
+        var className = document.documentElement.className;
+        document.documentElement.className = className.replace(/scripts-not-loaded/, '');
+        return;
+      }
+      setTimeout(check, timeout);
+    };
+
+    check();
+  }).call(this);
+  </script>
+
+
+</div> <!-- #application -->
+</body>
+</html>

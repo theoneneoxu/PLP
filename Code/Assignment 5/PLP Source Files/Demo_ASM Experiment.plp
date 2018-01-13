@@ -1,0 +1,40 @@
+Demo
+integer int1,
+integer int2,
+boolean bool1
+{
+	integer int3
+	integer int4
+	integer int5
+	boolean bool3
+
+	int3 <- int1;
+	int4 <- int2;
+	int5 <- int3 + int2;
+	int5 <- 17;
+	
+	bool3 <- bool1;
+	
+	if (int3 < int4) {
+		integer int101
+		integer int102
+		
+		int101 <- int5;
+		int102 <- int101;
+		int101 <- int102;
+		
+		while(int1 < int2) {
+			integer int103
+			
+			int103 <- 5;
+			int5 <- int103;
+		}
+	}
+	
+	if (bool3) {
+		integer int201
+		
+		int201 <- int5;
+		int5 <- int201;
+	}
+}
